@@ -14,7 +14,7 @@ const MovieThumb = ({
   movie,
 }) => {
   return <Paper className="movie-thumb">
-    <Media aspectRatio="4-3">
+    <Media aspectRatio="1-1">
       <img src={movie.Poster} alt={`${movie.Title} poster`} />
       <MediaOverlay>
         <CardTitle title={movie.Title} subtitle={movie.Year} />
