@@ -1,0 +1,11 @@
+.movie-list{
+  padding: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 960px;
+  & > * {
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+}
