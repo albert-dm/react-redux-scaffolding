@@ -1,6 +1,7 @@
 import React from 'react';
 import { Toolbar } from 'react-md';
 import { MovieList } from './components/MovieList';
+import { SearchForm } from './components/SearchForm';
 
 const movies = [
   {
@@ -77,7 +78,7 @@ const movies = [
 
 const App = () => {
   return <>
-    <Toolbar colored title='Movie Finder' />
+    <Toolbar colored title='Movie Finder' actions={<SearchForm search={(params) => { console.log(params); }} />} />
     <div id="content">
       <MovieList movies={movies} />
     </div>
