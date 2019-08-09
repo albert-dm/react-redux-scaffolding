@@ -38,4 +38,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Deploy
 
 The project demo is deployed everytime the master branch gets updadted.
-It can be found here [demo](https://movie-finder-demo.herokuapp.com/)
+It can be found [here](https://movie-finder-demo.herokuapp.com/).
