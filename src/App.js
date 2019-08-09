@@ -1,23 +1,51 @@
 import React from 'react';
-import { Toolbar } from 'react-md';
+import PropTypes from 'prop-types';
+import { Toolbar, CircularProgress } from 'react-md';
 import { SearchResults } from './containers/SearchResults';
 import { SearchFormContainer } from './containers/SearchFormContainer';
 import { SortFormContainer } from './containers/SortFormContainer';
+import { connect } from 'react-redux';
+import { ErrorMessage } from './components/ErrorMessage';
 
-const App = () => {
+const mapStateToProps = state => ({
+  error: state.global.error,
+  isLoading: state.global.isLoading,
+});
+
+const App = ({
+  error,
+  isLoading
+}) => {
   return <>
     <Toolbar
       colored
       title='Movie Finder'
       actions={[
         <SearchFormContainer key="search" />,
-        <SortFormContainer key="sort" />, 
+        <SortFormContainer key="sort" />,
       ]}
       prominent />
     <div id="content">
-      <SearchResults />
+      {
+        isLoading
+          ?
+          <CircularProgress id="loading"/>
+          :
+          error === ''
+            ?
+            <SearchResults />
+            :
+            <ErrorMessage message={error} />
+      }
     </div>
   </>;
 };
 
-export default App;
+App.propTypes = {
+  error: PropTypes.string,
+  isLoading: PropTypes.bool
+};
+
+export default connect(
+  mapStateToProps,
+)(App);

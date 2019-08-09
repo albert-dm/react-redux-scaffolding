@@ -1,14 +1,22 @@
 import { connect } from 'react-redux';
 import { SearchForm } from '../components/SearchForm';
-import { setMovies } from '../actions';
+import { setMovies, setLoading, setError } from '../actions';
 import { fetchMovies } from '../services/movieService';
 
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = dispatch => ({
   search: async (params) => {
-    const movies = await fetchMovies(params); 
-    dispatch(setMovies(movies));
+    dispatch(setError(''));
+    try {
+      dispatch(setLoading(true));
+      const movies = await fetchMovies(params);
+      dispatch(setMovies(movies));
+    } catch (e) {
+      dispatch(setError(e.message));
+    } finally {
+      dispatch(setLoading(false));
+    }
   }
 });
 
