@@ -6,7 +6,7 @@ import { sortMovies } from '../helpers/movieHelper';
 const mapStateToProps = state => {
   let movies;
   if(state.filters.attribute){
-    movies = sortMovies({movies: state.movies.list, ...state.filters});
+    movies = [...sortMovies({movies: state.movies.list, ...state.filters})];
   } else {
     movies = state.movies.list;
   }
