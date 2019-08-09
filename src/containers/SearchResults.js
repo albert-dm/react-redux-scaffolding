@@ -1,11 +1,20 @@
 import { connect } from 'react-redux';
 import { MovieList } from '../components/MovieList';
 import { setSelectedMovie } from '../actions';
+import { sortMovies } from '../helpers/movieHelper';
 
-const mapStateToProps = state => ({
-  movies: state.movies.list,
-  selectedMovie: state.movies.selected,
-});
+const mapStateToProps = state => {
+  let movies;
+  if(state.filters.attribute){
+    movies = sortMovies({movies: state.movies.list, ...state.filters});
+  } else {
+    movies = state.movies.list;
+  }
+  return {
+    movies,
+    selectedMovie: state.movies.selected,
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   selectMovie: async (movie) => {

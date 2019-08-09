@@ -19,7 +19,7 @@ const MovieThumb = ({
         <CardTitle title={movie.Title} subtitle={movie.Year} >
           {
             onClick &&
-            <Button onClick={showMore} className="action-button" floating secondary icon>add</Button>
+            <Button onClick={showMore} className="action-button" floating secondary>add</Button>
           }
         </CardTitle>
       </MediaOverlay>

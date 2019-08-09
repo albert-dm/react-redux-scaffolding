@@ -11,3 +11,10 @@ export const setSelectedMovie = (movie) => {
     movie,
   });
 };
+
+export const setFilters = (filters) => {
+  return ({
+    type: 'SET_FILTERS',
+    filters,
+  });
+};
