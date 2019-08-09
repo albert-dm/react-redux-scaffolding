@@ -18,7 +18,7 @@ const MovieList = ({
         movies.map(
           movie => selectedMovie && movie.imdbID === selectedMovie.imdbID
             ?
-            <MovieCard movie={movie} />
+            <MovieCard movie={movie} key={movie.imdbID} />
             :
             <MovieThumb onClick={() => selectMovie(movie)} key={movie.imdbID} movie={movie} action={selectMovie} />
         )

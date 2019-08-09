@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing MovieList behavior Should show list if movies 1`] = `
+<div
+  className="movie-list"
+>
+  <MovieThumb
+    key="1"
+    movie={
+      Object {
+        "Title": "Avengers",
+        "imdbID": 1,
+        "imdbRating": 9,
+      }
+    }
+    onClick={[Function]}
+  />
+  <MovieThumb
+    key="2"
+    movie={
+      Object {
+        "Title": "Resident Evil",
+        "imdbID": 2,
+        "imdbRating": 5.3,
+      }
+    }
+    onClick={[Function]}
+  />
+  <MovieThumb
+    key="3"
+    movie={
+      Object {
+        "Title": "Matrix",
+        "imdbID": 3,
+        "imdbRating": 10,
+      }
+    }
+    onClick={[Function]}
+  />
+  <MovieThumb
+    key="4"
+    movie={
+      Object {
+        "Title": "Titanic",
+        "imdbID": 4,
+        "imdbRating": 7.2,
+      }
+    }
+    onClick={[Function]}
+  />
+</div>
+`;
+
+exports[`Testing MovieList behavior Should show search if no movies 1`] = `
+<div
+  className="movie-list"
+>
+  <div
+    className="center"
+  >
+    <Connect(SearchForm) />
+  </div>
+</div>
+`;
