@@ -4,6 +4,7 @@ import './movieList.scss';
 
 import { MovieThumb } from '../MovieThumb';
 import { MovieCard } from '../MovieCard';
+import { SearchFormContainer } from '../../containers/SearchFormContainer';
 
 const MovieList = ({
   movies,
@@ -12,13 +13,19 @@ const MovieList = ({
 }) => {
   return <div className="movie-list">
     {
-      movies.map(
-        movie => selectedMovie && movie.imdbID === selectedMovie.imdbID
-          ?
-          <MovieCard movie={movie} />
-          :
-          <MovieThumb onClick={() => selectMovie(movie)} key={movie.imdbID} movie={movie} action={selectMovie} />
-      )
+      movies.length > 0
+        ?
+        movies.map(
+          movie => selectedMovie && movie.imdbID === selectedMovie.imdbID
+            ?
+            <MovieCard movie={movie} />
+            :
+            <MovieThumb onClick={() => selectMovie(movie)} key={movie.imdbID} movie={movie} action={selectMovie} />
+        )
+        :
+        <div className="center">
+          <SearchFormContainer />
+        </div>
     }
   </div>;
 };
