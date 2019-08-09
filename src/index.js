@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './App';
+import AppContainer from './containers/AppContainer';
 import * as serviceWorker from './serviceWorker';
 import WebFontLoader from 'webfontloader';
 import { Provider } from 'react-redux';
@@ -18,7 +18,7 @@ WebFontLoader.load({
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <AppContainer />
   </Provider>,
   document.getElementById('root')
 );

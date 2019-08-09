@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Toolbar, CircularProgress } from 'react-md';
-import { SearchResults } from './containers/SearchResults';
-import { SearchFormContainer } from './containers/SearchFormContainer';
-import { SortFormContainer } from './containers/SortFormContainer';
-import { connect } from 'react-redux';
-import { ErrorMessage } from './components/ErrorMessage';
-
-const mapStateToProps = state => ({
-  error: state.global.error,
-  isLoading: state.global.isLoading,
-});
+import { SearchResults } from '../../containers/SearchResults';
+import { SearchFormContainer } from '../../containers/SearchFormContainer';
+import { SortFormContainer } from '../../containers/SortFormContainer';
+import { ErrorMessage } from '../ErrorMessage';
 
 const App = ({
   error,
@@ -29,7 +23,7 @@ const App = ({
       {
         isLoading
           ?
-          <CircularProgress id="loading"/>
+          <CircularProgress id="loading" />
           :
           error === ''
             ?
@@ -46,6 +40,4 @@ App.propTypes = {
   isLoading: PropTypes.bool
 };
 
-export default connect(
-  mapStateToProps,
-)(App);
+export { App };
