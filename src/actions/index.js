@@ -1,6 +1,13 @@
 export const setMovies = (movies) => {
   return ({
     type: 'SET_MOVIES',
-    movies
+    movies,
+  });
+};
+
+export const setSelectedMovie = (movie) => {
+  return ({
+    type: 'SELECT_MOVIE',
+    movie,
   });
 };

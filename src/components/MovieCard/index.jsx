@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './movieCard.scss';
 
 import { MovieThumb } from '../MovieThumb';
-import { Paper } from 'react-md';
 
 const MovieCard = ({
   movie
@@ -12,11 +11,13 @@ const MovieCard = ({
     <MovieThumb
       movie={movie}
     />
-    <Paper>
-      {
-        JSON.stringify(movie)
-      }
-    </Paper>
+    <div>
+      <p><b>imdbRating:</b> {movie.imdbRating}</p>
+      <p><b>Genre:</b> {movie.Genre}</p>
+      <p><b>Released:</b> {movie.Released}</p>
+      <p><b>Runtime:</b> {movie.Runtime}</p>
+      <p><b>Plot:</b> {movie.Plot}</p>
+    </div>
   </div>;
 };
 
