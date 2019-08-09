@@ -10,13 +10,16 @@ const MovieThumb = ({
 }) => {
   const showMore = () => {
     onClick();
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   };
   return <Paper className="movie-thumb">
     <Media aspectRatio="1-1">
       <img src={movie.Poster} alt={`${movie.Title} poster`} />
       <MediaOverlay>
-        <CardTitle title={movie.Title} subtitle={movie.Year} >
+        <CardTitle
+          title={movie.Title}
+          subtitle={`Rating: ${movie.imdbRating}`}
+        >
           {
             onClick &&
             <Button onClick={showMore} className="action-button" floating secondary>add</Button>

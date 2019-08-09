@@ -12,7 +12,6 @@ const MovieCard = ({
       movie={movie}
     />
     <div>
-      <p><b>imdbRating:</b> {movie.imdbRating}</p>
       <p><b>Genre:</b> {movie.Genre}</p>
       <p><b>Released:</b> {movie.Released}</p>
       <p><b>Runtime:</b> {movie.Runtime}</p>
