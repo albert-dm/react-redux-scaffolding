@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { OMDB_API_KEY } from '../config';
 
-const API_URL = `http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&type=movie`;
+const API_URL = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&type=movie`;
 
 export const fetchMovies = async ({ title, year }) => {
   const { data, status } = await axios.get(`${API_URL}&s=${title}${year ? `&y=${year}` : ''}`);
