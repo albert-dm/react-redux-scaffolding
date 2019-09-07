@@ -1,26 +1,8 @@
-@import '~react-md/src/scss/react-md';
-
-$md-light-theme: false;
-$md-primary-color: $md-red-500;
-$md-secondary-color: $md-amber-a-700;
-
-@include react-md-everything;
-
 html,
 body,
 *{
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
-
-#content{
-    display: flex;
-    justify-content: center;
-}
-
-.center{
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    font-family: 'Roboto';
 }
