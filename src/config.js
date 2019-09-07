@@ -1,1 +1,1 @@
-export const OMDB_API_KEY = process.env.REACT_APP_OMDB_API_KEY || '9d8ca8d4';
+// export const ENV_CONST = process.env.REACT_APP_OMDB_ENV_CONST|| 'constValue';

@@ -1,35 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Toolbar, CircularProgress } from 'react-md';
-import { SearchResults } from '../../containers/SearchResults';
-import { SearchFormContainer } from '../../containers/SearchFormContainer';
-import { SortFormContainer } from '../../containers/SortFormContainer';
-import { ErrorMessage } from '../ErrorMessage';
 
 const App = ({
   error,
   isLoading
 }) => {
   return <>
-    <Toolbar
-      colored
-      title='Movie Finder'
-      actions={[
-        <SearchFormContainer key="search" />,
-        <SortFormContainer key="sort" />,
-      ]}
-      prominent />
-    <div id="content">
+    <div>
       {
-        isLoading
-          ?
-          <CircularProgress id="loading" />
-          :
-          error === ''
-            ?
-            <SearchResults />
-            :
-            <ErrorMessage message={error} />
+        error ? <h1>{JSON.stringify(error)}</h1> :
+          isLoading ? <h1>Loading...</h1> :
+            <h1>Seja bem vindo</h1>
       }
     </div>
   </>;
@@ -37,7 +18,7 @@ const App = ({
 
 App.propTypes = {
   error: PropTypes.string,
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
 };
 
 export { App };
