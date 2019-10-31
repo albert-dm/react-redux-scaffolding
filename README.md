@@ -1,11 +1,13 @@
-# Movie Finder
+# React + Redux scaffolding
 
-Search and sort movies from OMDb Api. It is a demo using Redux for managing states and Jest+Enzyme to test.
+The project implements the essential features to be prepared for a scalable and clean Ract App.
+It uses Redux for managing states and Jest+Enzyme to test.
+It is based mainly in functional components.
 
 ## Install
 
-    $ git clone https://github.com/albert-dm/movie-finder.git
-    $ cd movie-finder
+    $ git clone https://github.com/albert-dm/react-redux-scaffolding.git
+    $ react-redux-scaffolding
     $ npm install
 
 ## Available Scripts
